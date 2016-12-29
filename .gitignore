@@ -1,0 +1,40 @@
+# Start app specific gitignore
+
+.bundle
+.rspec
+*.rbc
+.idea/
+*.iml
+.project
+results.xml
+results.html
+tmp/
+
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/coverage/
+/test/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+config/initializers/secret_token.rb
+config/secrets.yml
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
+
+# these should all be checked in to normalize the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
+# Ignore pow environment settings
+.powenv
+
+.DS_Store
+
+# End app gitignore

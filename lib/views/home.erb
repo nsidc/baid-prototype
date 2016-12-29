@@ -1,0 +1,70 @@
+<h1><%= BaidData::App.project %></h1>
+<h2><%= description %></h2>
+
+<p><%= BaidData::App.project %> provides a RESTful API to export metadata records
+  from the NSIDC EDB database to NASA's CMR repository</p>
+
+<% if ['integration', 'development'].include? ENV['RACK_ENV'] %>
+<p>
+<span>ENV array:</span>
+  <ul>
+    <% ENV.keys.sort.each do |k| %>
+      <li><%= k %> = <%= ENV[k] %></li>
+    <% end %>
+  </ul>
+
+<span>env array:</span>
+  <ul>
+    <% env.keys.sort.each do |k| %>
+      <li><%= k %> = <%= env[k] %></li>
+    <% end %>
+  </ul>
+</p>
+<% end %>
+
+<h3>Endpoints</h3>
+<p>Query parameters:
+  <ul>
+    <li><em>id</em>: NSIDC's authoritative id for the dataset (e.g., NSIDC-0051).
+    No option to specify a version yet!</li>
+    <li><em>provider</em>: The CMR provider (e.g., NSIDCV0TST)</li>
+  </ul>
+</p>
+
+<table>
+  <thead>
+  <tr>
+  <th>Verb</th>
+  <th>URL</th>
+  <th>Result</th>
+  </tr>
+  </thead>
+
+<tbody>
+<tr>
+<td>get</td>
+<td><%= env['HTTP_HOST'] %>/</td>
+<td>this page</td>
+</tr>
+<tr>
+<td>get</td>
+<td><%= env['HTTP_HOST'] %>/{provider}/dataset/{id}</td>
+<td>Dataset status in CMR (not implemented yet)</td>
+</tr>
+<tr>
+<td>get</td>
+<td><%= env['HTTP_HOST'] %>/{provider}/dataset/{id}/validity</td>
+<td>Check validity of ISO record (no read/write from/to CMR)</td>
+</tr>
+<tr>
+<td>put</td>
+<td><%= env['HTTP_HOST'] %>/{provider}/dataset/{id}</td>
+<td>Create/update the dataset record in CMR.</td>
+</tr>
+<tr>
+<td>delete</td>
+<td><%= env['HTTP_HOST'] %>/{provider}/dataset/{id}</td>
+<td>Delete the dataset record from CMR</td>
+</tr>
+</tbody>
+</table>

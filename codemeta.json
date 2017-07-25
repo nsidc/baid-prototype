@@ -1,0 +1,25 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "baid-prototype",
+  "name": "BAID Prototype Data Server",
+  "description": "A prototype to demonstrate data services for the BAID application",
+  "codeRepository": "https://github.com/nsidc/baid-prototype",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "v0.1.0",
+  "author": [{
+    "@id": "http://orcid.org/0000-0003-4276-0318",
+    "@type": "Person",
+    "givenName": "Julia",
+    "familyName": "Collins",
+    "email": "collinsj@nsidc.org",
+    "affiliation": "University of Colorado/CIRES/NSIDC"
+  }],
+  "programmingLanguage": "Ruby",
+  "developmentStatus": "inactive",
+  "funding":"National Science Foundation Award #1023561; Collaborative Research - Development and innovation of the Barrow Area Information Database (BAID): A cyberinfrastructure that supports arctic science, outreach and education",
+  "keywords": [
+    "RESTful data services",
+    "field observations"
+  ]
+}

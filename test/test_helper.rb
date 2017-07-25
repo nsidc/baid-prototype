@@ -3,11 +3,9 @@ require 'bundler/setup'
 require 'rack'
 require 'minitest/autorun'
 require 'minitest/reporters'
-require 'mocha/mini_test'
 require 'rack/test'
 
-# Tell ruby_dep gem to be quiet. Might want to turn this back on
-# once the app is more mature.
+# Tell ruby_dep gem to be quiet.
 ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1'
 ENV['RACK_ENV'] = 'test'
 require_relative '../lib/app'

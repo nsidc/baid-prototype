@@ -1,5 +1,6 @@
 # Read data from a local text file
 module DStore
+  # Open and parse a CSV file containing some time series data
   class TSeries
     attr_reader :time_series
 
@@ -28,11 +29,11 @@ module DStore
           }
         }
 
-        File.foreach(fh) { |line|
+        File.foreach(fh) do |line|
           # The third element in the line identifies the site and community. Look
           # for Barrow (B), Wet (W) or Dry (D)
-          if(/B[W|D]/.match(line.tr('"','').split( %r{\s+} )[3]))
-            arr = line.tr('"','').split( %r{\s+} )
+          if (/B[W|D]/.match(line.tr('"', '').split(%r{\s+})[3]))
+            arr = line.tr('"', '').split(%r{\s+})
             data = { 'utc' => arr[0],
                      'local' => arr[1],
                      'julian' => arr[7].to_i,
@@ -47,7 +48,7 @@ module DStore
                      'nacl' => arr[18].to_f }
             @time_series[arr[3]][arr[4]][arr[5]] << data
           end
-        }
+        end
       end
     end
   end

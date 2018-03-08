@@ -9,12 +9,12 @@ gem 'rake'
 gem 'json'
 gem 'puma', '~>3.1.0'
 gem 'bump', '~>0.5.2'
-gem 'yard'
+gem 'yard', '~>0.9.11'
 gem 'yard-sinatra'
 
 group :test, :development do
   gem 'minitest', '~>5.8.4', :require=> 'minitest/autorun'
   gem 'minitest-hooks', '~>1.4.0'
   gem 'minitest-reporters', '~>1.1.9'
-  gem 'rubocop', '~>0.40.0'
+  gem 'rubocop', '~>0.49.0'
 end
